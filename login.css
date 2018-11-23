@@ -2,7 +2,7 @@ body{
     margin: 0 auto;
     padding: 0;
     display: grid;
-    grid-template: 10% 90% / 20% 80%;
+    grid-template: 10% 90% / 15% 85%;
     height: 100%;
     font-family: Helvetica, serif;
 }
@@ -21,6 +21,19 @@ aside{
     grid-row: 2 / span 1;
     background-color: #fafafa;
     min-height: auto;
+}
+
+aside ul {
+    margin-top: 40px;
+}
+
+aside li i {
+    margin-right: 10px;
+}
+
+aside li {
+    list-style: none;
+    margin-bottom: 10px;
 }
 
 main{
@@ -57,7 +70,7 @@ label{
     background-color: #fafafa;
 }
 
-#submit input{
+#submit input {
     width: 150px;
     height: 40px;
     margin-top: 10px;
