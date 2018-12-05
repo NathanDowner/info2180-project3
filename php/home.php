@@ -29,7 +29,7 @@
                 
                 <h3>Available Jobs</h3>
                 <table>
-                    <thead>
+                    <theSad>
                         <tr>
                             <th>Company</th>
                             <th>Job Title</th>
@@ -45,7 +45,7 @@
                             <td><a href="jobview.php?jid=<?= $j['ID'];?>"></a><?= $j['Job_Title']; ?></a></td>
                             <td><?= $j['Category']; ?></td>
                             <td><?= $j['Date_Posted']; ?></td>
-                            <td>yo</td>
+                            <td></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

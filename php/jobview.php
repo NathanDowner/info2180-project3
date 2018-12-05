@@ -3,7 +3,7 @@
     require 'connection.php';
     require 'aside.php';
     $id = $_GET['jid'];
-    die(var_dump($id));
+    // die(var_dump($id));
     $stmt = $conn->query("select * from Jobs where ID='$id'");
     $job = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

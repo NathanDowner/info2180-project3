@@ -10,7 +10,7 @@ require 'aside.php';
 </head>
 <main>
     <h1>New Job</h1>
-    <form action="php/newjob.php" method="POST">
+    <form action="process_job.php" method="POST">
         <div id="group">
             <label for="jtitle">Job Title</label>
             <input id="jtitle" type="text" name="jtitle" placeholder="e.g Senior Designer or Product Manager" required/>

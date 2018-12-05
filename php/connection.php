@@ -1,8 +1,8 @@
 <?php
 
 //starting the session
-session_start();
-session_id();
+// session_start();
+// session_id();
 
 
 $host = getenv('IP');

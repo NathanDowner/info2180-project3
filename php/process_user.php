@@ -36,12 +36,12 @@ require 'connection.php';
     }
     
     $stmt = $conn->prepare("insert into Users (Firstname, Lastname, Password, Telephone, Email)
-                          values (:fname, :lname, :pass, :tele, :email)");
+                          values (:fname, :lname, MD5(:pass), :tele, :email)");
     $stmt->bindParam(':fname', $firstname, PDO::PARAM_STR);
     $stmt->bindParam(':lname', $lastname, PDO::PARAM_STR);
     $stmt->bindParam(':pass', $password, PDO::PARAM_STR);
     $stmt->bindParam(':tele', $telephone, PDO::PARAM_STR);
-    $stmt->bindParam(':email', MD5($email), PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     
     $result = $stmt->execute();
     
