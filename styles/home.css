@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro');
+
+/* Formats the contents of the container in the
+    same line */
+.title{
+    display: inline;
+}
+
+/* Styles the heading and allows the heading to be
+    in the same line as the button */
+h1{
+    font-size: 0.3in;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/* Style the job post button */
+input[type=submit] {
+    margin-left: 55%;
+    padding: 8px 40px;
+    background-color: #ffcd3c;
+    color: white;
+    border: 1px solid #fefed5;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table thead {
+    background: #ebf0f6;
+}
+
+table tbody a {
+    text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+/* Heading size and shifts it to the right */
+h1{
+    font-size: 0.26in;
+    margin-left: 50px;
+}
+
+/* Styles the description field. Expands for
+    text visibiility */
+#group #description{
+    height: 150px;
+}
+
+/* Styles drop down selection for the categories */
+#group #category{
+    width: 50%;
+    height: 30px;
+    border: 2px solid #f2f7ff;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+/* Sets the colour for the displayed text for the drop down selection */
+select:invalid{
+    color: gray;
+}

@@ -1,34 +1,38 @@
 DROP DATABASE IF EXISTS hireme;
 CREATE DATABASE hireme;
+Use hireme;
 
-DROP TABLE IF EXISTS 'Users';
-CREATE TABLE 'Users'(
-    'ID' INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    'Firstname' CHAR(40) NOT NULL default '',
-    'Lastname' CHAR(40) NOT NULL default '',
-    'Password' VARCHAR(205) NOT NULL default '',
-    'Telephone' CHAR(13) NOT NULL default '',
-    'Email' VARCHAR(50) NOT NULL default '',
-    'Date_Joined' DATE NOT NULL
-);
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users(
+    ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Firstname VARCHAR(40) NOT NULL default '',
+    Lastname VARCHAR(40) NOT NULL default '',
+    Password VARCHAR(255) NOT NULL default '',
+    Telephone VARCHAR(13) NOT NULL default '',
+    Email VARCHAR(50) NOT NULL default '',
+    Date_Jointed TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS 'Jobs';
-CREATE TABLE 'Jobs'(
-    'ID'  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    'Job_Title' CHAR(20) NOT NULL default '',
-    'Job_Description' VARCHAR(300) NOT NULL default '',
-    'Category' CHAR(50) NOT NULL default '',
-    'Company_Name' VARCHAR(50) NOT NULL default '',
-    'Company_Location' VARCHAR(100) NOT NULL default '',
-    'Date_Posted' DATE NOT NULL
-);
+DROP TABLE IF EXISTS Jobs;
+CREATE TABLE Jobs(
+    ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Job_Title VARCHAR(20) NOT NULL default '',
+    Job_Description VARCHAR(300) NOT NULL default '',
+    Category VARCHAR(50) NOT NULL default '',
+    Company_Name VARCHAR(50) NOT NULL default '',
+    Company_Location VARCHAR(100) NOT NULL default '',
+    Date_Posted TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS 'Jobs Applied For';
-CREATE TABLE 'Jobs Applied For'(
-    'ID'  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    'Job_ID' INT(10) UNSIGNED NOT NULL REFERENCES JOBS,
-    'User_ID' INT(10) UNSIGNED NOT NULL REFERENCES USERS,
-    'Date_Applied' DATE NOT NULL
-);
+DROP TABLE IF EXISTS Jobs_Applied_For;
+CREATE TABLE Jobs_Applied_For(
+    ID INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Job_ID INT(10) UNSIGNED NOT NULL REFERENCES Jobs,
+    User_ID INT(10) UNSIGNED NOT NULL REFERENCES Users,
+    Date_Applied TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=utf8;
 
-INSERT INTO Users (Email, Password) VALUES ('admin@hireme.com', 'password123');
+/*Pasword should be hashed before being inserted into the database*/;
+LOCK TABLES Users WRITE;
+INSERT INTO Users (Email, Password) VALUES ("admin@hireme.com", MD5("password123"));
+UNLOCK TABLES;
